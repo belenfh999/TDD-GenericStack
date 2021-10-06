@@ -60,6 +60,6 @@ The testing framework that will be used is MSTest.
 
 - To run the tests, we will use a tool called dotnetWatcher. In order for it to work properly run:
 
-`dotnet watch -p ./Stack.Tests/ test`
+`dotnet watch -p ./GenericStack.Tests/ test`
 
 **NOTE:** The dotnet Watcher allows us to watch our code and rerun all our tests anytime a code file is changed and saved.
