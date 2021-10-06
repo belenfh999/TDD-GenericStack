@@ -2,7 +2,18 @@
 
 namespace GenericStack.Library
 {
-    public class Class1
+    public class GenericStack<T>
     {
+        private T _element;
+
+        public void Push(T element)
+        {
+            _element = element;
+        }
+
+        public T Pop()
+        {
+            return _element;
+        }
     }
 }
