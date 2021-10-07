@@ -55,7 +55,7 @@ namespace GenericStack.Tests
         public void CanPopFromEmptyList()
         {
             var g_stack = new GenericStack<string>();
-            Assert.AreEqual(null, g_stack.Pop());
+            Assert.AreEqual(default(string), g_stack.Pop());
         }
     }
 }
