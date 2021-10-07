@@ -14,10 +14,18 @@ namespace GenericStack.Library
 
         public T Pop()
         {
-            int lastElemIndex = _elements.Count - 1;
-            T elem = _elements[lastElemIndex];
-            _elements.RemoveAt(lastElemIndex);
-            return elem;
+            if (_elements.Count == 0)
+            {
+                return default(T);
+            }
+            else
+            {
+                int lastElemIndex = _elements.Count - 1;
+                T elem = _elements[lastElemIndex];
+                _elements.RemoveAt(lastElemIndex);
+                return elem;
+            }
+
         }
     }
 }
