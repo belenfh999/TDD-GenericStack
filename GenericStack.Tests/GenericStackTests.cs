@@ -14,5 +14,15 @@ namespace GenericStack.Tests
             g_stack.Push(100);
             Assert.AreEqual(100, g_stack.Pop());
         }
+
+        [TestMethod]
+        public void CanPopOff2Items()
+        {
+            var g_stack = new GenericStack<int>();
+            g_stack.Push(100);
+            g_stack.Push(-4);
+            Assert.AreEqual(-4, g_stack.Pop());
+            Assert.AreEqual(100, g_stack.Pop());
+        }
     }
 }
