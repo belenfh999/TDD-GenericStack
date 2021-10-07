@@ -24,5 +24,31 @@ namespace GenericStack.Tests
             Assert.AreEqual(-4, g_stack.Pop());
             Assert.AreEqual(100, g_stack.Pop());
         }
+
+        [TestMethod]
+        public void CanPopOff3Items()
+        {
+            var g_stack = new GenericStack<string>();
+            g_stack.Push("foo");
+            g_stack.Push("bar");
+            g_stack.Push("test");
+            Assert.AreEqual("test", g_stack.Pop());
+            Assert.AreEqual("bar", g_stack.Pop());
+            Assert.AreEqual("foo", g_stack.Pop());
+        }
+
+        [TestMethod]
+        public void CanPopOff4Items()
+        {
+            var g_stack = new GenericStack<string>();
+            g_stack.Push("foo");
+            g_stack.Push("bar");
+            g_stack.Push("test");
+            g_stack.Push("rrrr");
+            Assert.AreEqual("rrrr", g_stack.Pop());
+            Assert.AreEqual("test", g_stack.Pop());
+            Assert.AreEqual("bar", g_stack.Pop());
+            Assert.AreEqual("foo", g_stack.Pop());
+        }
     }
 }
