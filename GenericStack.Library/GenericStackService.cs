@@ -9,7 +9,14 @@ namespace GenericStack.Library
 
         public void Push(T element)
         {
-            _elements.Add(element);
+            if (EqualityComparer<T>.Default.Equals(element, default(T)))
+            {
+                throw new ArgumentNullException("Null cannot be pushed into the stack.");
+            }
+            else
+            {
+                _elements.Add(element);
+            }
         }
 
         public T Pop()
