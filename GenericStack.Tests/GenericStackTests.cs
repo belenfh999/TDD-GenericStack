@@ -7,64 +7,67 @@ namespace GenericStack.Tests
     [TestClass]
     public class GenericStacksTests
     {
+        private GenericStack<int> int_stack;
+        private GenericStack<string> string_stack;
+
+        public GenericStacksTests()
+        {
+            int_stack = new GenericStack<int>();
+            string_stack = new GenericStack<string>();
+        }
+
         [TestMethod]
         public void CanPopOffItem()
         {
-            var g_stack = new GenericStack<int>();
-            g_stack.Push(100);
-            Assert.AreEqual(100, g_stack.Pop());
+            int_stack.Push(100);
+            Assert.AreEqual(100, int_stack.Pop());
         }
 
         [TestMethod]
         public void CanPopOff2Items()
         {
-            var g_stack = new GenericStack<int>();
-            g_stack.Push(100);
-            g_stack.Push(-4);
-            Assert.AreEqual(-4, g_stack.Pop());
-            Assert.AreEqual(100, g_stack.Pop());
+            int_stack.Push(100);
+            int_stack.Push(-4);
+            Assert.AreEqual(-4, int_stack.Pop());
+            Assert.AreEqual(100, int_stack.Pop());
         }
 
         [TestMethod]
         public void CanPopOff3Items()
         {
-            var g_stack = new GenericStack<string>();
-            g_stack.Push("foo");
-            g_stack.Push("bar");
-            g_stack.Push("test");
-            Assert.AreEqual("test", g_stack.Pop());
-            Assert.AreEqual("bar", g_stack.Pop());
-            Assert.AreEqual("foo", g_stack.Pop());
+            string_stack.Push("foo");
+            string_stack.Push("bar");
+            string_stack.Push("test");
+            Assert.AreEqual("test", string_stack.Pop());
+            Assert.AreEqual("bar", string_stack.Pop());
+            Assert.AreEqual("foo", string_stack.Pop());
         }
 
         [TestMethod]
         public void CanPopOff4Items()
         {
-            var g_stack = new GenericStack<string>();
-            g_stack.Push("foo");
-            g_stack.Push("bar");
-            g_stack.Push("test");
-            g_stack.Push("rrrr");
-            Assert.AreEqual("rrrr", g_stack.Pop());
-            Assert.AreEqual("test", g_stack.Pop());
-            Assert.AreEqual("bar", g_stack.Pop());
-            Assert.AreEqual("foo", g_stack.Pop());
+            string_stack.Push("foo");
+            string_stack.Push("bar");
+            string_stack.Push("test");
+            string_stack.Push("rrrr");
+            Assert.AreEqual("rrrr", string_stack.Pop());
+            Assert.AreEqual("test", string_stack.Pop());
+            Assert.AreEqual("bar", string_stack.Pop());
+            Assert.AreEqual("foo", string_stack.Pop());
         }
 
         [TestMethod]
         public void CanPopFromEmptyStack()
         {
-            var g_stack = new GenericStack<string>();
-            Assert.AreEqual(default(string), g_stack.Pop());
+            Assert.AreEqual(default(string), string_stack.Pop());
         }
 
         [TestMethod]
         public void CantPushNullValue()
         {
-            var g_stack = new GenericStack<string>();
             Assert.ThrowsException<ArgumentNullException>(() =>
             {
-                g_stack.Push(default(string));
+                string_stack.Push(default(string));
             });
         }
     }
