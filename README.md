@@ -1,7 +1,8 @@
-# TDD-Stack
+# TDD-GenericStack
 
 Implementation of a simple Stack to learn TDD using C#.
 The testing framework that will be used is MSTest.
+The implementation will use generics so that it is strongly typed.
 
 # Stack Behavior
 
