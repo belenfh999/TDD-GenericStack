@@ -7,7 +7,7 @@ namespace GenericStack.Library
     {
         private List<T> _elements = new List<T>();
 
-        public void Push(T element)
+        public GenericStack<T> Push(T element)
         {
             if (EqualityComparer<T>.Default.Equals(element, default(T)))
             {
@@ -16,6 +16,7 @@ namespace GenericStack.Library
             else
             {
                 _elements.Add(element);
+                return this;
             }
         }
 
