@@ -52,10 +52,20 @@ namespace GenericStack.Tests
         }
 
         [TestMethod]
-        public void CanPopFromEmptyList()
+        public void CanPopFromEmptyStack()
         {
             var g_stack = new GenericStack<string>();
             Assert.AreEqual(default(string), g_stack.Pop());
+        }
+
+        [TestMethod]
+        public void CantPushNullValue()
+        {
+            var g_stack = new GenericStack<string>();
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            {
+                g_stack.Push(default(string));
+            });
         }
     }
 }
