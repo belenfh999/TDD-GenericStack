@@ -26,8 +26,8 @@ namespace GenericStack.Tests
         [TestMethod]
         public void CanPopOff2Items()
         {
-            int_stack.Push(100);
-            int_stack.Push(-4);
+            int_stack.Push(100)
+                     .Push(-4);
             Assert.AreEqual(-4, int_stack.Pop());
             Assert.AreEqual(100, int_stack.Pop());
         }
@@ -35,9 +35,9 @@ namespace GenericStack.Tests
         [TestMethod]
         public void CanPopOff3Items()
         {
-            string_stack.Push("foo");
-            string_stack.Push("bar");
-            string_stack.Push("test");
+            string_stack.Push("foo")
+                        .Push("bar")
+                        .Push("test");
             Assert.AreEqual("test", string_stack.Pop());
             Assert.AreEqual("bar", string_stack.Pop());
             Assert.AreEqual("foo", string_stack.Pop());
@@ -46,10 +46,10 @@ namespace GenericStack.Tests
         [TestMethod]
         public void CanPopOff4Items()
         {
-            string_stack.Push("foo");
-            string_stack.Push("bar");
-            string_stack.Push("test");
-            string_stack.Push("rrrr");
+            string_stack.Push("foo")
+                        .Push("bar")
+                        .Push("test")
+                        .Push("rrrr");
             Assert.AreEqual("rrrr", string_stack.Pop());
             Assert.AreEqual("test", string_stack.Pop());
             Assert.AreEqual("bar", string_stack.Pop());
